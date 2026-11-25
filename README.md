@@ -33,8 +33,7 @@ Generative LLMs add latency and output-token cost when your agent or automation 
 ### From a local checkout (development / local testing)
 
 ```bash
-hermes plugins install /path/to/hermes-gemini-decisions
-hermes plugins enable gemini-decisions
+hermes plugins install file:///path/to/hermes-gemini-decisions --enable --yes-deps
 ```
 
 ### From GitHub (exact commit pin recommended)
