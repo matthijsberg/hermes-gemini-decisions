@@ -1,8 +1,10 @@
-# Gemini Decisions Plugin for Hermes Agent
+# Gemini Decisions Plugin for Hermes Agent (Beta)
+
+> **Status: Beta (`v0.1.0`)** — Active local testing and validation before Hermes Plugin Catalog submission. Feedback and bug reports are welcome, and interfaces may still evolve before `v1.0.0`.
 
 Fast, calibrated multimodal classification, routing, policy checks, and rubric scoring via Google's [Gemini Decisions API](https://aistudio.google.com/docs/decisions-api) (`gemini-decision-1`, zero output tokens).
 
-- **Version:** `0.1.0`
+- **Version:** `0.1.0` (Beta)
 - **Hermes compatibility:** `>=0.23.0` (Python `>=3.11`)
 - **Runtime dependencies:** None (pure Python standard library)
 - **License:** MIT

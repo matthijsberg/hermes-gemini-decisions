@@ -2,7 +2,7 @@ name: gemini-decisions
 version: "0.1.0"
 manifest_version: 2
 api_version: 1
-description: "Fast, calibrated multimodal classification, routing, and scoring via Google's Gemini Decisions API (gemini-decision-1, zero output tokens)."
+description: "[Beta] Fast, calibrated multimodal classification, routing, and scoring via Google's Gemini Decisions API (gemini-decision-1, zero output tokens)."
 author: Matthijs van den Berg
 license: MIT
 homepage: https://github.com/matthijsberg/hermes-gemini-decisions
