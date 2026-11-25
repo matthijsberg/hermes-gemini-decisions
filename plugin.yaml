@@ -25,8 +25,8 @@ config_schema:
     type: secret
     env: GEMINI_API_KEY
     label: "Gemini API key"
-    description: "Google AI Studio / Gemini Developer API key authorized for v1beta Decisions API."
-    required: true
+    description: "Google AI Studio / Gemini Developer API key authorized for v1beta Decisions API (stored in profile secrets, never config.yaml)."
+    required: false
   endpoint:
     type: str
     default: "https://generativelanguage.googleapis.com/v1beta/decisions"
