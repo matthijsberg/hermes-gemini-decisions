@@ -1,0 +1,43 @@
+{
+  "single_text": "Reminder: Your child's library book 'De Grijze Jager' is 4 days overdue. Please return it by Friday to avoid a fine.",
+  "questions": {
+    "needs_action": {
+      "type": "noul",
+      "instructions": "Does this message require a concrete action or return from the recipient?"
+    },
+    "category": {
+      "type": "choice",
+      "instructions": "Which inbox triage category best fits this message?",
+      "criteria": {
+        "urgent_action": "Overdue items, fines, deadlines, or urgent requests.",
+        "calendar": "Confirmed or proposed appointment/meeting times.",
+        "newsletter": "Marketing, promotions, or general FYI updates.",
+        "other": "Anything outside these categories."
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "Rate the urgency of this message.",
+      "criteria": [
+        "Ignore: promotional or irrelevant.",
+        "Low: informational, no deadline.",
+        "Medium: needs attention this week.",
+        "High: immediate deadline, overdue item, or fine."
+      ]
+    }
+  },
+  "batch_items": [
+    {
+      "id": "mail_promo",
+      "text": "FLASH SALE: 30% off all running shoes this weekend only!"
+    },
+    {
+      "id": "mail_school",
+      "text": "Parent-teacher meeting scheduled for Thursday 26 November at 19:30 in room B12."
+    },
+    {
+      "id": "mail_library",
+      "text": "Reminder: Library book is 4 days overdue. Return before Friday to avoid a fine."
+    }
+  ]
+}

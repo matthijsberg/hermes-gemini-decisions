@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-gemini-decisions"
+version = "0.1.0"
+description = "Hermes Agent plugin and zero-dependency Python client for Google's Gemini Decisions API (gemini-decision-1)."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [{name = "Matthijs van den Berg"}]
+keywords = ["hermes-agent", "plugin", "gemini", "decisions-api", "classification", "routing"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<10.0",
+    "ruff>=0.6,<1.0",
+    "bandit>=1.7,<2.0",
+]
+
+[project.scripts]
+gemini-decisions = "gemini_decisions.cli:main"
+
+[project.entry-points."hermes_agent.plugins"]
+gemini-decisions = "gemini_decisions:register"
+
+[tool.setuptools]
+packages = ["gemini_decisions"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+norecursedirs = [".git", ".venv", "venv", "dist", "build"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S"]
+ignore = ["S310"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S603"]

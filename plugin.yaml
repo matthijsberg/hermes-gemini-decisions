@@ -1,0 +1,65 @@
+name: gemini-decisions
+version: "0.1.0"
+manifest_version: 2
+api_version: 1
+description: "Fast, calibrated multimodal classification, routing, and scoring via Google's Gemini Decisions API (gemini-decision-1, zero output tokens)."
+author: Matthijs van den Berg
+license: MIT
+homepage: https://github.com/matthijsberg/hermes-gemini-decisions
+requires_hermes: ">=0.23.0"
+tags:
+  - gemini
+  - decisions
+  - classification
+  - routing
+  - triage
+  - multimodal
+provides_tools:
+  - gemini_decide
+  - gemini_decide_batch
+provides_hooks: []
+requires_env:
+  - GEMINI_API_KEY
+config_schema:
+  api_key:
+    type: secret
+    env: GEMINI_API_KEY
+    label: "Gemini API key"
+    description: "Google AI Studio / Gemini Developer API key authorized for v1beta Decisions API."
+    required: true
+  endpoint:
+    type: str
+    default: "https://generativelanguage.googleapis.com/v1beta/decisions"
+    label: "Decisions API endpoint"
+    description: "HTTPS endpoint for the Gemini Decisions API."
+    required: false
+  decision_model:
+    type: str
+    default: "gemini-decision-1"
+    label: "Decision model"
+    description: "Gemini Decisions model identifier."
+    required: false
+  timeout_seconds:
+    type: int
+    default: 30
+    label: "Request timeout (seconds)"
+    description: "Per-request HTTP timeout in seconds (1 to 300)."
+    required: false
+  max_concurrency:
+    type: int
+    default: 4
+    label: "Batch concurrency"
+    description: "Maximum parallel API calls in gemini_decide_batch (1 to 10)."
+    required: false
+  max_batch_items:
+    type: int
+    default: 50
+    label: "Max batch items"
+    description: "Maximum items allowed per gemini_decide_batch call (1 to 200)."
+    required: false
+  max_file_mb:
+    type: int
+    default: 20
+    label: "Max local file size (MB)"
+    description: "Maximum size for inline local media attachments in MB (1 to 50)."
+    required: false
